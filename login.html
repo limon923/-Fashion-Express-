@@ -1,0 +1,52 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fashion Express - Login</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+<div class="container">
+    <div class="section-title">Login</div>
+    <div class="inner-container">
+        <div class="logo">
+            <h1>Fashion <span>Express</span></h1>
+        </div>
+        <div class="form-container">
+            <div class="form-left">
+                <form id="loginForm">
+                    <div class="input-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Enter your password" required>
+                    </div>
+                    <button type="submit" class="btn-login">Log In</button>
+                </form>
+                <div class="switch-form">
+                    <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+                </div>
+            </div>
+            <div class="form-right">
+                <div class="social-login">
+                    <p>Or log in with</p>
+                    <div class="social-buttons">
+                        <div class="btn-social btn-google">
+                            <i class="fab fa-google"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section-end">Login Section End</div>
+</div>
+
+<!-- JS Module -->
+<script type="module" src="js/login.js"></script>
+</body>
+</html>

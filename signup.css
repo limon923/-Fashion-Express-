@@ -1,0 +1,233 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 20px;
+}
+
+/* Section Start */
+.section-title {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(45deg, #ff4e50, #f9d423);
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.inner-container {
+    padding: 30px;
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo h1 {
+    font-size: 48px;
+    background: linear-gradient(45deg, #ff4e50, #f9d423, #6c5ce7, #00cec9);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+    animation: rgb-flow 3s infinite alternate;
+}
+
+.logo span {
+    font-family: 'Segoe Script', cursive;
+    font-size: 52px;
+    color: #6c5ce7;
+}
+
+.form-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.form-left {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+}
+
+.form-right {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px dashed #ccc;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #444;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 50px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: #6c5ce7;
+    box-shadow: 0 0 10px rgba(108, 92, 231, 0.3);
+}
+
+.btn-signup {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(45deg, #ff4e50, #f9d423);
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(249, 212, 35, 0.4);
+}
+
+.btn-signup:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(249, 212, 35, 0.6);
+}
+
+.social-login {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.social-login p {
+    margin-bottom: 15px;
+    color: #777;
+    position: relative;
+}
+
+.social-login p::before,
+.social-login p::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 100px;
+    height: 1px;
+    background: #ddd;
+}
+
+.social-login p::before {
+    left: 0;
+}
+
+.social-login p::after {
+    right: 0;
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-facebook {
+    background: linear-gradient(45deg, #3b5998, #4a69a4);
+}
+
+.btn-google {
+    background: linear-gradient(45deg, #dd4b39, #e05d4d);
+}
+
+.btn-social:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.switch-form {
+    text-align: center;
+    margin-top: 30px;
+    color: #777;
+}
+
+.switch-form a {
+    color: #6c5ce7;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.switch-form a:hover {
+    text-decoration: underline;
+}
+
+/* Section End */
+.section-end {
+    text-align: center;
+    padding: 15px;
+    background: linear-gradient(45deg, #ff4e50, #f9d423);
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+@keyframes rgb-flow {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .form-right {
+        border-left: none;
+        border-top: 1px dashed #ccc;
+        padding-top: 30px;
+        margin-top: 30px;
+    }
+}
