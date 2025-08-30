@@ -1,0 +1,280 @@
+/* ===== Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+/* ===== Header ===== */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: green;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Logo */
+.logo h2 { font-size: 24px; color: #6a0572; }
+.logo .fashion { background: linear-gradient(45deg,#ff4e50,#f9d423); -webkit-background-clip: text; color: transparent; font-weight: bold; }
+/* Desktop Menu */
+.desktop-menu ul {
+  display: flex;
+  list-style: none;
+}
+.desktop-menu ul li a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+.desktop-menu ul li a:hover { color: #ff4e50; }
+
+/* Menu Icon (Hamburger) */
+.menu-icon {
+  cursor: pointer;
+  display: none; /* hide by default */
+  font-size: 22px;
+  color: #333;
+}
+
+/* Search Container */
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.search-box {
+  padding: 5px 10px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  display: none; /* initially hide for mobile */
+}
+.search-icon {
+  cursor: pointer;
+  font-size: 18px;
+  margin-left: 10px;
+}
+.close-btn {
+  display: none;
+  cursor: pointer;
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+}
+
+/* Notification */
+.notification { position: relative; cursor: pointer; }
+.notif-dropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 35px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 220px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  z-index: 1001;
+}
+.notif-dropdown ul { list-style: none; }
+.notif-dropdown ul li a { display: block; padding: 10px; text-decoration: none; color: #333; font-size: 14px; }
+.notif-dropdown ul li a:hover { background: #f5f5f5; }
+
+/* Mobile Menu */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 250px;
+  height: 100%;
+  background: #fff;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+  transition: 0.3s;
+  z-index: 999;
+}
+.mobile-menu ul { list-style: none; padding: 50px 20px; }
+.mobile-menu ul li a { display: block; padding: 15px 0; text-decoration: none; color: #333; font-size: 16px; }
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: none;
+  z-index: 998;
+}
+/* Hero Section CSS for Desktop */
+.hero-section {
+    width: 100%;
+    height: 300px; /* ডেস্কটপের জন্য আপনার ছবির উচ্চতা */
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.hero-section img.active {
+    opacity: 1;
+}
+
+/* Dot Navigation CSS */
+.slider-dots {
+    position: absolute;
+    bottom: 20px; /* নিচের থেকে দূরত্ব */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px; /* ডটগুলির মধ্যে দূরত্ব */
+    z-index: 10; /* নিশ্চিত করে যে ডটগুলি ছবির উপরে থাকে */
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.5); /* হালকা সাদা */
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, width 0.3s ease, height 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.3); /* বর্ডার যোগ করা হয়েছে */
+}
+
+.dot.active {
+    background-color: green; /* সক্রিয় ডটের রঙ */
+    border-color: black ;
+    transform: scale(1.2); /* সক্রিয় ডট একটু বড় হবে */
+}
+
+/* Keyframe for bounce animation */
+@keyframes dot-bounce {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.4); } /* সর্বোচ্চ বড় হবে */
+    100% { transform: scale(1.2); } /* সক্রিয় অবস্থায় ফিরে আসবে */
+}
+
+.dot.active.animate {
+    animation: dot-bounce 0.4s ease-out forwards; /* অ্যানিমেশন যোগ করা হয়েছে */
+}
+
+/* Hero Section CSS End for Desktop */
+
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 768px) {
+    /* Hero Section CSS for Mobile */
+    .hero-section {
+        height: 200px; /* মোবাইলের জন্য আপনার ছবির উচ্চতা, উদাহরণস্বরূপ */
+    }
+
+    .hero-section img {
+        object-fit: cover;
+    }
+
+    /* Dot Navigation for Mobile */
+    .slider-dots {
+        bottom: 10px; /* মোবাইলের জন্য নিচের থেকে দূরত্ব কমানো হয়েছে */
+        gap: 8px; /* ডটগুলির মধ্যে দূরত্ব কমানো হয়েছে */
+    }
+
+    .dot {
+        width: 10px;
+        height: 10px;
+    }
+
+    .dot.active {
+        transform: scale(1.1); /* মোবাইলের জন্য একটু কম বড় হবে */
+    }
+
+    @keyframes dot-bounce {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.3); }
+        100% { transform: scale(1.1); }
+    }
+    /* Hero Section CSS End for Mobile */
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        height: 150px; /* আরও ছোট মোবাইলের জন্য ছবির উচ্চতা */
+    }
+}
+
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 768px) {
+    /* Hero Section CSS for Mobile */
+    .hero-section {
+        height: 200px; /* মোবাইলের জন্য আপনার ছবির উচ্চতা, উদাহরণস্বরূপ */
+    }
+
+    .hero-section img {
+        object-fit: cover;
+    }
+
+    /* Dot Navigation for Mobile */
+    .slider-dots {
+        bottom: 10px; /* মোবাইলের জন্য নিচের থেকে দূরত্ব কমানো হয়েছে */
+        gap: 8px; /* ডটগুলির মধ্যে দূরত্ব কমানো হয়েছে */
+    }
+
+    .dot {
+        width: 10px;
+        height: 10px;
+    }
+
+    .dot.active {
+        transform: scale(1.1); /* মোবাইলের জন্য একটু কম বড় হবে */
+    }
+
+    @keyframes dot-bounce {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.3); }
+        100% { transform: scale(1.1); }
+    }
+    /* Hero Section CSS End for Mobile */
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        height: 150px; /* আরও ছোট মোবাইলের জন্য ছবির উচ্চতা */
+    }
+}
+/* Featured Products */
+.featured-products { max-width: 1200px; margin: 50px auto; padding: 0 20px; }
+.featured-products h2 { text-align: center; color: #ff4e50; margin-bottom: 30px; font-size: 28px; }
+.product-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 20px; }
+.product-item { text-align: center; background: #fff; padding: 15px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: transform 0.3s ease; }
+.product-item:hover { transform: translateY(-5px) scale(1.02); }
+.product-item img { max-width: 100%; border-radius: 10px; margin-bottom: 10px; transition: transform 0.3s ease; }
+.product-item:hover img { transform: scale(1.05); }
+.product-item h3 { font-size: 18px; margin-bottom: 8px; }
+.product-item p { font-size: 14px; color: #555; margin-bottom: 12px; }
+
+/* Responsive */
+@media(max-width:768px){
+  .menu-icon { display: block; }
+  .desktop-menu { display: none; }
+  .search-box { display: none; width: 150px; }
+  .close-btn { display: inline; }
+}
